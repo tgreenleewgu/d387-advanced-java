@@ -7,7 +7,7 @@ import java.util.ResourceBundle;
 import java.util.*;
 
 public class DisplayMessage implements Runnable {
-    private Locale locale;
+    private  Locale locale;
     private String message;
 
     public DisplayMessage(Locale locale) {
@@ -15,7 +15,7 @@ public class DisplayMessage implements Runnable {
     }
 
     public String getMessage() {
-        if (message == null) {
+       if (message == null) {
             ResourceBundle bundle = ResourceBundle.getBundle("welcome", locale);
             message = bundle.getString("welcomeMessage");
         }

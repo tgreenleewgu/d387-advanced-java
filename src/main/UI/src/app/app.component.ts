@@ -33,8 +33,13 @@ export class AppComponent implements OnInit{
 
     ngOnInit(){
 
-      this.englishWelcomeMessage$ = this.httpClient.get(this.baseURL + '/welcome?lang=en-US', { responseType: 'text' });
+      this.englishWelcomeMessage$ = this.httpClient.get(this.baseURL + '/welcome?lang=en-CA', { responseType: 'text' });
       this.frenchWelcomeMessage$ = this.httpClient.get(this.baseURL + '/welcome?lang=fr-CA', { responseType: 'text' });
+
+      // this.englishWelcomeMessage$ = this.httpClient.get(this.baseURL + '/welcome?lang=en-US', { responseType: 'text' }).pipe(map(response => response as string));
+      //
+      //
+      // this.frenchWelcomeMessage$ = this.httpClient.get(this.baseURL + '/welcome?lang=fr-CA', { responseType: 'text' }).pipe(map(response => response as string));
 
       this.roomsearch= new FormGroup({
         checkin: new FormControl(' '),
