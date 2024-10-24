@@ -22,8 +22,12 @@
 <main id="wrapper">
   <div class="scene" id="welcome">
     <article class="content">
+      <div>
+        <h2>{{ englishWelcomeMessage$ | async }}</h2>
+        <h2>{{ frenchWelcomeMessage$ | async }}</h2>
+      </div>
 
- 
+
 
       <div class="row">
         <div class=""col-12>
@@ -58,7 +62,7 @@
               </div>
               </form>
 
-        
+
         </div>
       </div>
 
