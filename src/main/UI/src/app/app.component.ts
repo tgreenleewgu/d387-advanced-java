@@ -30,8 +30,11 @@ export class AppComponent implements OnInit{
   request!:ReserveRoomRequest;
   currentCheckInVal!:string;
   currentCheckOutVal!:string;
+  convertedTimesZones: string = '';
 
     ngOnInit(){
+
+      this.fetchTimes();
 
       this.englishWelcomeMessage$ = this.httpClient.get(this.baseURL + '/welcome?lang=en-US', { responseType: 'text' });
       this.frenchWelcomeMessage$ = this.httpClient.get(this.baseURL + '/welcome?lang=fr-CANADA', { responseType: 'text' });
@@ -56,6 +59,17 @@ export class AppComponent implements OnInit{
       this.currentCheckInVal = x.checkin;
       this.currentCheckOutVal = x.checkout;
     });
+  }
+
+    fetchTimes() {
+      this.httpClient.get('http://localhost:8080/api/time/convert', {responseType: 'text'}).subscribe(
+        (res: string) => {
+          this.convertedTimesZones = res;
+        },
+        (error: any) => {
+          console.error(error);
+      }
+    );
   }
 
     onSubmit({value,valid}:{value:Roomsearch,valid:boolean}){
@@ -88,6 +102,7 @@ export class AppComponent implements OnInit{
   /*mapRoom(response:HttpResponse<any>): Room[]{
     return response.body;
   }*/
+
 
     getAll(): Observable<any> {
 
