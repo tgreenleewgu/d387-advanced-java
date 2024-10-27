@@ -15,10 +15,10 @@ public class DisplayMessage implements Runnable {
     }
 
     public String getMessage() {
-       if (message == null) {
-            ResourceBundle bundle = ResourceBundle.getBundle("welcome", locale);
+
+            ResourceBundle bundle = ResourceBundle.getBundle("Nat", Locale.getDefault());
             message = bundle.getString("welcomeMessage");
-        }
+
         return message;
     }
 

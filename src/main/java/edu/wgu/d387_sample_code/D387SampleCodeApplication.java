@@ -16,16 +16,16 @@ public class D387SampleCodeApplication {
 
 
 		// Create DisplayMessage instances for each locale
-		DisplayMessage displayMessageEnglish = new DisplayMessage(Locale.US);
-		DisplayMessage displayMessageFrench = new DisplayMessage(Locale.CANADA_FRENCH);
-
-		// Create threads for each DisplayMessage instance
-		Thread englishThread = new Thread(displayMessageEnglish);
-		Thread frenchThread = new Thread(displayMessageFrench);
-
-		// Start threads
-		englishThread.start();
-		frenchThread.start();
+//		DisplayMessage displayMessageEnglish = new DisplayMessage(Locale.US);
+//		DisplayMessage displayMessageFrench = new DisplayMessage(Locale.CANADA_FRENCH);
+//
+//		// Create threads for each DisplayMessage instance
+//		Thread englishThread = new Thread(displayMessageEnglish);
+//		Thread frenchThread = new Thread(displayMessageFrench);
+//
+//		// Start threads
+//		englishThread.start();
+//		frenchThread.start();
 
 	}
 

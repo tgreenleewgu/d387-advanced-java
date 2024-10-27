@@ -36,8 +36,8 @@ export class AppComponent implements OnInit{
 
       this.fetchTimes();
 
-      this.englishWelcomeMessage$ = this.httpClient.get(this.baseURL + '/welcome?lang=en-US', { responseType: 'text' });
-      this.frenchWelcomeMessage$ = this.httpClient.get(this.baseURL + '/welcome?lang=fr-CANADA', { responseType: 'text' });
+      this.englishWelcomeMessage$ = this.httpClient.get(this.baseURL + '/welcome-en?lang=en-US', { responseType: 'text' });
+      this.frenchWelcomeMessage$ = this.httpClient.get(this.baseURL + '/welcome-fr?lang=fr-CA', { responseType: 'text' });
 
       // this.englishWelcomeMessage$ = this.httpClient.get(this.baseURL + '/welcome?lang=en-US', { responseType: 'text' }).pipe(map(response => response as string));
       //
